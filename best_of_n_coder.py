@@ -125,11 +125,10 @@ def extract_code(text):
     return match.group(1).strip() if match else text.strip()
 
 
-def get_candidate(prompt, temperature=0.8):
+def get_candidate(prompt):
     response = client.messages.create(
         model=MODEL,
         max_tokens=500,
-        temperature=temperature,
         messages=[{
             "role": "user",
             "content": f"{prompt}\n\nRespond with ONLY the function definition in a single Python code block. No explanation.",
