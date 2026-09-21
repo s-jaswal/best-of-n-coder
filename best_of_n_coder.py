@@ -64,54 +64,60 @@ PROBLEMS = [
         ],
     },
     {
-        "name": "flatten",
-        "prompt": "Write a Python function `flatten(nested)` that flattens an arbitrarily nested list of integers into a single flat list.",
-        "tests": [
-            "assert flatten([1, [2, 3], [4, [5, 6]]]) == [1, 2, 3, 4, 5, 6]",
-            "assert flatten([]) == []",
-            "assert flatten([[1], [2], [3]]) == [1, 2, 3]",
-        ],
-    },
-    {
-        "name": "most_frequent_char",
-        "prompt": "Write a Python function `most_frequent_char(s)` that returns the most frequently occurring character in string s. Break ties by returning the character that appears first in the string.",
-        "tests": [
-            "assert most_frequent_char('aabbbcc') == 'b'",
-            "assert most_frequent_char('xyz') == 'x'",
-        ],
-    },
-    {
-        "name": "reverse_words",
-        "prompt": "Write a Python function `reverse_words(sentence)` that reverses the order of words in a sentence, keeping each word itself unreversed. Words are separated by single spaces.",
-        "tests": [
-            "assert reverse_words('the sky is blue') == 'blue is sky the'",
-            "assert reverse_words('hello world') == 'world hello'",
-        ],
-    },
-    {
-        "name": "sum_digits",
-        "prompt": "Write a Python function `sum_digits(n)` that returns the sum of the digits of a non-negative integer n.",
-        "tests": [
-            "assert sum_digits(1234) == 10",
-            "assert sum_digits(0) == 0",
-            "assert sum_digits(9) == 9",
-        ],
-    },
-    {
-        "name": "unique_chars",
-        "prompt": "Write a Python function `has_unique_chars(s)` that returns True if all characters in string s are unique (no repeats), False otherwise.",
-        "tests": [
-            "assert has_unique_chars('abcdef') == True",
-            "assert has_unique_chars('hello') == False",
-            "assert has_unique_chars('') == True",
-        ],
-    },
-    {
         "name": "matrix_transpose",
         "prompt": "Write a Python function `transpose(matrix)` that takes a 2D list (list of lists) and returns its transpose.",
         "tests": [
             "assert transpose([[1,2],[3,4]]) == [[1,3],[2,4]]",
             "assert transpose([[1,2,3]]) == [[1],[2],[3]]",
+        ],
+    },
+    {
+        "name": "balanced_parens",
+        "prompt": "Write a Python function `is_balanced(s)` that returns True if all brackets in string s are balanced and correctly nested. Consider (), [], and {} as bracket pairs. Ignore all other characters.",
+        "tests": [
+            "assert is_balanced('([{}])') == True",
+            "assert is_balanced('([)]') == False",
+            "assert is_balanced('a(b)c[d]e') == True",
+            "assert is_balanced('(((') == False",
+            "assert is_balanced('') == True",
+        ],
+    },
+    {
+        "name": "roman_to_int",
+        "prompt": "Write a Python function `roman_to_int(s)` that converts a Roman numeral string to an integer. Handle subtractive notation correctly (e.g. IV = 4, IX = 9, XL = 40, CM = 900).",
+        "tests": [
+            "assert roman_to_int('III') == 3",
+            "assert roman_to_int('IV') == 4",
+            "assert roman_to_int('LVIII') == 58",
+            "assert roman_to_int('MCMXCIV') == 1994",
+        ],
+    },
+    {
+        "name": "merge_intervals",
+        "prompt": "Write a Python function `merge_intervals(intervals)` that takes a list of [start, end] intervals (not necessarily sorted) and merges all overlapping intervals, returning the merged list sorted by start.",
+        "tests": [
+            "assert merge_intervals([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]",
+            "assert merge_intervals([[1,4],[4,5]]) == [[1,5]]",
+            "assert merge_intervals([[1,4],[0,4]]) == [[0,4]]",
+        ],
+    },
+    {
+        "name": "word_break",
+        "prompt": "Write a Python function `word_break(s, word_dict)` that returns True if string s can be segmented into a space-separated sequence of one or more words from word_dict (a list of strings). Words can be reused.",
+        "tests": [
+            "assert word_break('leetcode', ['leet','code']) == True",
+            "assert word_break('applepenapple', ['apple','pen']) == True",
+            "assert word_break('catsandog', ['cats','dog','sand','and','cat']) == False",
+        ],
+    },
+    {
+        "name": "longest_common_prefix",
+        "prompt": "Write a Python function `longest_common_prefix(strs)` that returns the longest common prefix string among a list of strings. Return an empty string if there is no common prefix or the list is empty.",
+        "tests": [
+            "assert longest_common_prefix(['flower','flow','flight']) == 'fl'",
+            "assert longest_common_prefix(['dog','racecar','car']) == ''",
+            "assert longest_common_prefix([]) == ''",
+            "assert longest_common_prefix(['single']) == 'single'",
         ],
     },
 ]
