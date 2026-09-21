@@ -11,6 +11,7 @@ Usage:
 """
 
 import os
+import sys
 import subprocess
 import tempfile
 import re
@@ -149,7 +150,7 @@ def run_test(code, test_line, timeout=5):
         path = f.name
     try:
         result = subprocess.run(
-            ["python3", path],
+            [sys.executable, path],
             capture_output=True,
             timeout=timeout,
         )
